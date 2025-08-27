@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/27 09:55:45 by pafuente          #+#    #+#             */
+/*   Updated: 2025/08/27 09:55:45 by pafuente         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <cctype>
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     if (argc == 1)
     {
