@@ -6,7 +6,7 @@
 /*   By: marvin <pafuente@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:09:19 by pafuente          #+#    #+#             */
-/*   Updated: 2025/09/02 21:28:02 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/02 21:54:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void PhoneBook::addContact()
 
     if (f.empty() || l.empty() || n.empty() || p.empty() || d.empty())
     {
-        std::cout << "Error: no se permiten campos vacíos." << std::endl;
+        std::cout << "Error: empty fields are not allowed." << std::endl;
         return;
     }
 
@@ -54,7 +54,7 @@ void PhoneBook::searchContacts() const
 {
     if (count == 0)
     {
-        std::cout << "Agenda vacía." << std::endl;
+        std::cout << "Empty phonebook." << std::endl;
         return;
     }
 
@@ -71,14 +71,14 @@ void PhoneBook::searchContacts() const
                   << std::setw(10) << truncate(contacts[i].getNickname()) << std::endl;
     }
 
-    std::cout << "Ingrese el índice del contacto a mostrar: ";
+    std::cout << "Enter the index of the contact to display: ";
     int idx;
     std::cin >> idx;
     std::cin.ignore();
 
     if (idx < 0 || idx >= count)
     {
-        std::cout << "Índice inválido." << std::endl;
+        std::cout << "Invalid index." << std::endl;
         return;
     }
 
