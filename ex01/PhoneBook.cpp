@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <pafuente@student.42malaga.com>     +#+  +:+       +#+        */
+/*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:09:19 by pafuente          #+#    #+#             */
-/*   Updated: 2025/09/02 21:54:39 by marvin           ###   ########.fr       */
+/*   Updated: 2025/09/03 14:04:35 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void PhoneBook::searchContacts() const
     std::cin >> idx;
     std::cin.ignore();
 
-    if (idx < 0 || idx >= count)
+    if (idx < 0 || idx >= count) //Poner que no se acepten letras, cuando se busca por indice en el search
     {
         std::cout << "Invalid index." << std::endl;
         return;
