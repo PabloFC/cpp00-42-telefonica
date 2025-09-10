@@ -6,17 +6,21 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:09:19 by pafuente          #+#    #+#             */
-/*   Updated: 2025/09/10 12:35:18 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:42:18 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
 #include <limits>
 
+// Constructor initializes contact count and index to 0
 PhoneBook::PhoneBook() : count(0), index(0) {}
 
+// Prompts user for contact information and adds it to phonebook
+// Validates that no field is empty before storing the contact
 void PhoneBook::addContact()
 {
     std::string f, l, n, p, d;
@@ -44,6 +48,8 @@ void PhoneBook::addContact()
         count++;
 }
 
+// Truncates strings longer than 10 characters and adds a dot
+// Returns original string if 10 characters or less
 static std::string truncate(std::string str)
 {
     if (str.length() > 10)
@@ -51,6 +57,8 @@ static std::string truncate(std::string str)
     return str;
 }
 
+// Displays contacts in table format and allows user to view details
+// Shows all contacts and prompts for index to display full information
 void PhoneBook::searchContacts() const
 {
     if (count == 0)

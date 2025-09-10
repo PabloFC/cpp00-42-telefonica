@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:30:55 by pafuente          #+#    #+#             */
-/*   Updated: 2025/09/03 11:17:36 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:40:39 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int main()
             phoneBook.searchContacts();
         else if (command == "EXIT")
             break;
+        else if (!command.empty())
+            std::cout << "Invalid command. Use ADD, SEARCH, or EXIT." << std::endl;
     }
     return 0;
 }
