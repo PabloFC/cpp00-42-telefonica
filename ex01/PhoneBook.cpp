@@ -6,13 +6,14 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 10:09:19 by pafuente          #+#    #+#             */
-/*   Updated: 2025/09/03 14:04:35 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:35:18 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 PhoneBook::PhoneBook() : count(0), index(0) {}
 
@@ -73,10 +74,17 @@ void PhoneBook::searchContacts() const
 
     std::cout << "Enter the index of the contact to display: ";
     int idx;
-    std::cin >> idx;
+    
+    if (!(std::cin >> idx))
+    {
+        std::cout << "Invalid input: please enter a number." << std::endl;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return;
+    }
     std::cin.ignore();
 
-    if (idx < 0 || idx >= count) //Poner que no se acepten letras, cuando se busca por indice en el search
+    if (idx < 0 || idx >= count)
     {
         std::cout << "Invalid index." << std::endl;
         return;
